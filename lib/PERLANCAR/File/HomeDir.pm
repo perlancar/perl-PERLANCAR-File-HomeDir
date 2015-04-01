@@ -65,7 +65,7 @@ failure.
 
 None are exported by default, but they are exportable.
 
-=head2 get_home_dir => str
+=head2 get_my_home_dir() => str
 
 Try several ways to get home directory. Return undef or die (depends on
 C<$DIE_ON_FAILURE>) if everything fails.
