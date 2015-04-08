@@ -1,5 +1,10 @@
 Revision history for PERLANCAR-File-HomeDir
 
+0.02    2015-04-08 (PERLANCAR)
+
+	- Fix OS name for Windows [GH#1].
+
+
 0.01    2015-04-01 (PERLANCAR)
 
         - First release.
