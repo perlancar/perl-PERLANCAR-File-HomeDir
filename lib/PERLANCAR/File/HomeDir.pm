@@ -16,7 +16,7 @@ our $DIE_ON_FAILURE = 0;
 
 # borrowed from File::HomeDir, with some modifications
 sub get_my_home_dir {
-    if ($^O eq 'Win32') {
+    if ($^O eq 'MSWin32') {
         # File::HomeDir always uses exists($ENV{x}) first, does it want to avoid
         # accidentally creating env vars?
         return $ENV{HOME} if $ENV{HOME};
