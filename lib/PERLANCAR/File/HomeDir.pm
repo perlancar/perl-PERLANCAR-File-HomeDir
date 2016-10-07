@@ -25,7 +25,8 @@ sub get_my_home_dir {
             if $ENV{HOMEDRIVE} && $ENV{HOMEPATH};
     } else {
         return $ENV{HOME} if $ENV{HOME};
-        my @pw = getpwuid($>);
+        my @pw;
+        eval { @pw = getpwuid($>) };
         return $pw[7] if @pw;
     }
 
