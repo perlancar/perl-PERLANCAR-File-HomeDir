@@ -1,5 +1,13 @@
 Revision history for PERLANCAR-File-HomeDir
 
+0.03    2016-10-07 (PERLANCAR)
+
+	- Handle case where getpwuid() is not implemented, e.g. on Windows
+	  (ref:
+	  https://github.com/perlancar/perl-Perinci-CmdLine-Lite/issues/1
+	  ).
+
+
 0.02    2015-04-08 (PERLANCAR)
 
 	- Fix OS name for Windows [GH#1].
