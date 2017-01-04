@@ -1,5 +1,10 @@
 Revision history for PERLANCAR-File-HomeDir
 
+0.04    2017-01-04 (PERLANCAR)
+
+	- Add function: users_home().
+
+
 0.03    2016-10-07 (PERLANCAR)
 
 	- Handle case where getpwuid() is not implemented, e.g. on Windows
