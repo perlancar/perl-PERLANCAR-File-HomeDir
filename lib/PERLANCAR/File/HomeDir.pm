@@ -37,14 +37,41 @@ sub get_my_home_dir {
     }
 }
 
+# borrowed from File::HomeDir, with some modifications
+sub users_home {
+    my ($name) = @_;
+
+    if ($^O eq 'MSWin32') {
+        # not yet implemented
+        return undef;
+    } else {
+        # IF and only if we have getpwuid support, and the name of the user is
+        # our own, shortcut to my_home. This is needed to handle HOME
+        # environment settings.
+        if ($name eq getpwuid($<)) {
+            return get_my_home_dir();
+        }
+
+      SCOPE: {
+            my $home = (getpwnam($name))[7];
+            return $home if $home and -d $home;
+        }
+
+        return undef;
+    }
+
+}
+
 1;
 # ABSTRACT: Lightweight way to get current user's home directory
 
 =head1 SYNOPSIS
 
- use PERLANCAR::Home::Dir qw(get_my_home_dir);
+ use PERLANCAR::Home::Dir qw(get_my_home_dir users_home);
 
  my $dir = get_my_home_dir();
+
+ $dir = users_home("ujang");
 
 
 =head1 DESCRIPTION
@@ -70,6 +97,8 @@ None are exported by default, but they are exportable.
 
 Try several ways to get home directory. Return undef or die (depends on
 C<$DIE_ON_FAILURE>) if everything fails.
+
+=head2 users_home($username) => str
 
 
 =head1 SEE ALSO
