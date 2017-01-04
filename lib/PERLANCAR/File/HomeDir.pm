@@ -38,7 +38,7 @@ sub get_my_home_dir {
 }
 
 # borrowed from File::HomeDir, with some modifications
-sub users_home {
+sub get_users_home_dir {
     my ($name) = @_;
 
     if ($^O eq 'MSWin32') {
@@ -98,7 +98,7 @@ None are exported by default, but they are exportable.
 Try several ways to get home directory. Return undef or die (depends on
 C<$DIE_ON_FAILURE>) if everything fails.
 
-=head2 users_home($username) => str
+=head2 get_users_home_dir($username) => str
 
 
 =head1 SEE ALSO
