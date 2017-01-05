@@ -1,5 +1,11 @@
 Revision history for PERLANCAR-File-HomeDir
 
+0.05    2017-01-05 (PERLANCAR)
+
+	- [Incompatible change] Rename function users_home ->
+	  get_users_home_dir.
+
+
 0.04    2017-01-04 (PERLANCAR)
 
 	- Add function: users_home().
