@@ -10,6 +10,7 @@ use warnings;
 use Exporter qw(import);
 our @EXPORT_OK = qw(
                        get_my_home_dir
+                       get_user_home_dir
                );
 
 our $DIE_ON_FAILURE = 0;
@@ -38,7 +39,7 @@ sub get_my_home_dir {
 }
 
 # borrowed from File::HomeDir, with some modifications
-sub get_users_home_dir {
+sub get_user_home_dir {
     my ($name) = @_;
 
     if ($^O eq 'MSWin32') {
@@ -67,11 +68,11 @@ sub get_users_home_dir {
 
 =head1 SYNOPSIS
 
- use PERLANCAR::Home::Dir qw(get_my_home_dir users_home);
+ use PERLANCAR::File::HomeDir qw(get_my_home_dir get_user_home_dir);
 
- my $dir = get_my_home_dir();
+ my $dir = get_my_home_dir(); # e.g. "/home/ujang"
 
- $dir = users_home("ujang");
+ $dir = get_user_home_dir("ujang");
 
 
 =head1 DESCRIPTION
@@ -93,12 +94,22 @@ failure.
 
 None are exported by default, but they are exportable.
 
-=head2 get_my_home_dir() => str
+=head2 get_my_home_dir
 
-Try several ways to get home directory. Return undef or die (depends on
-C<$DIE_ON_FAILURE>) if everything fails.
+Usage:
 
-=head2 get_users_home_dir($username) => str
+ my $home_dir = get_my_home_dir();
+
+Try several ways to get home directory of the current user. Return undef or die
+(depends on C<$DIE_ON_FAILURE>) if everything fails.
+
+=head2 get_user_home_dir
+
+Usage:
+
+ my $home_dir = get_user_home_dir($username);
+
+Try several ways to get home directory of a specified user (C<$username>).
 
 
 =head1 SEE ALSO
