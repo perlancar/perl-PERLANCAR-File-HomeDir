@@ -1,3 +1,10 @@
+0.060   2018-09-20 (PERLANCAR)
+
+        - No functional changes.
+
+	- [doc] Document get_user_home_dir().
+
+
 0.05    2017-01-05 (PERLANCAR)
 
 	- [Incompatible change] Rename function users_home ->
