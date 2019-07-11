@@ -1,22 +1,22 @@
-0.060   2018-09-20 (PERLANCAR)
+0.060   2018-09-20  Released-By: PERLANCAR
 
         - No functional changes.
 
 	- [doc] Document get_user_home_dir().
 
 
-0.05    2017-01-05 (PERLANCAR)
+0.05    2017-01-05  Released-By: PERLANCAR
 
 	- [Incompatible change] Rename function users_home ->
 	  get_users_home_dir.
 
 
-0.04    2017-01-04 (PERLANCAR)
+0.04    2017-01-04  Released-By: PERLANCAR
 
 	- Add function: users_home().
 
 
-0.03    2016-10-07 (PERLANCAR)
+0.03    2016-10-07  Released-By: PERLANCAR
 
 	- Handle case where getpwuid() is not implemented, e.g. on Windows
 	  (ref:
@@ -24,11 +24,11 @@
 	  ).
 
 
-0.02    2015-04-08 (PERLANCAR)
+0.02    2015-04-08  Released-By: PERLANCAR
 
 	- Fix OS name for Windows [GH#1].
 
 
-0.01    2015-04-01 (PERLANCAR)
+0.01    2015-04-01  Released-By: PERLANCAR
 
         - First release.
